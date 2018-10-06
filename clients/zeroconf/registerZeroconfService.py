@@ -9,7 +9,7 @@ def myLocalIP():
     # retrieve hostname from socket
     hostname = socket.gethostname()
     
-    # find local ipaddress to for other devices to connect to
+    # find local ipaddress to for other clients to connect to
     # and to use it in advertising zeroconf service
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.connect(("8.8.8.8", 80))

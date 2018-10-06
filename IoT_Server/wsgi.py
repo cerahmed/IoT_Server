@@ -11,7 +11,7 @@ import os
 # import time
 
 from django.core.wsgi import get_wsgi_application
-# from devices.zeroconf.registerZeroconfService import registerService, unregisterService
+# from clients.zeroconf.registerZeroconfService import registerService, unregisterService
 
 def onStartUp():
     '''

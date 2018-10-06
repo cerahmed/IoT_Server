@@ -9,14 +9,14 @@
   <script>
     $(document).ready(function(){
       $("#on").click(function(){
-        $.get("{% url 'devices:turnon' %}");
+        $.get("{% url 'clients:turnon' %}");
         console.log("on");
       })
     });
 
     $(document).ready(function(){
       $("#off").click(function(){
-        $.get("{% url 'devices:turnoff' %}");
+        $.get("{% url 'clients:turnoff' %}");
         console.log("off");
       })
     });
