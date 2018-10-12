@@ -8,6 +8,7 @@ https://docs.djangoproject.com/en/2.1/howto/deployment/wsgi/
 """
 
 import os
+import RPi.GPIO as gpio
 # import time
 
 from django.core.wsgi import get_wsgi_application
@@ -17,8 +18,10 @@ def onStartUp():
     '''
     By me.
     This function is meant to run on each startup of the server.
-    '''
-    
+    '''        
+    # setup RPi
+    gpio.setmode(gpio.BCM)
+
 #     registerService() # for debugging purposes
 #     time.sleep(6)
 #     unregisterService()

@@ -19,11 +19,9 @@ class Devices(models.Model):
     name = models.CharField(max_length=50)
     display_name = models.CharField(max_length=2, unique=True)
     type = models.CharField(max_length=1, choices=typeChoices)
-    lastTime = models.TimeField(null=True, default=None)
+    lastTime = models.DateTimeField(null=True, default=None)
     pin = models.CharField(max_length=2, unique=True, validators=[RegexValidator(r'^\d{1,10}$')])
     pinTime = models.CharField(max_length = 1, validators=[RegexValidator(r'^\d{1,10}$')])
-    
-    readonly_fields = ["lastTime"]
-    
+        
     def __str__(self):
         return self.name + ' - ' + [element for element in self.typeChoices if element[0] == self.type][0][1]

@@ -28,7 +28,18 @@
                     	{% if device.lastTime == None %}
                     		Never Opened
                     	{% else %}
-                    		{{ device.lastTime }}
+                    	
+                    		{% if device.lastTime >= today %}
+                    			Today
+	                    		<strong>{{ device.lastTime|date:'h:i A'  }}</strong>
+	                    	{% elif device.lastTime >= yesterday %}
+	                    		Yesterday
+	                    		<strong>{{ device.lastTime|date:'h:i A'  }}</strong>
+                    		{% else %}
+	                    		{{ device.lastTime|date:'M d, Y '  }}
+	                    		<strong>{{ device.lastTime|date:'h:i A'  }}</strong>
+                    		{% endif %}
+                    		
                     	{% endif %}
                     </span>
                   </div>

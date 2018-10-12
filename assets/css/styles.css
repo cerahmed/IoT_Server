@@ -104,6 +104,12 @@ body {
   display: block;
 }
 
+@media (max-width: 440px) {
+  .activityLabel {
+    display: none;
+  }
+}
+
 .activityTime {
   color: #c92a41;
 }
@@ -117,6 +123,12 @@ body {
   line-height: 0;
 }
 /* Small devices (landscape phones, 576px and up) */
+@media (max-width: 440px) {
+  .activityNumber {
+  font-size: 30px;
+  }
+}
+
 @media (min-width: 576px) {
   .activityNumber {
     font-size: 50px;
