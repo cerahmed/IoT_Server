@@ -18,6 +18,7 @@ def onStartUp():
     By me.
     This function is meant to run on each startup of the server.
     '''
+    
 #     registerService() # for debugging purposes
 #     time.sleep(6)
 #     unregisterService()

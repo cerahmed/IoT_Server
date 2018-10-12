@@ -1,7 +1,11 @@
 from django.db import models
 
 # Create your models here.
-class RegisteredDevices(models.Model):
+class RegisteredClients(models.Model):
+    
+    class Meta: # a class to fix plural name that shows in the admin site
+        verbose_name_plural = 'Registered Clients'
+    
     #id field is automatically added by django
     dateAdded = models.DateTimeField(auto_now_add=True)
     hostname = models.CharField(max_length=100, null=False)

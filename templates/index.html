@@ -1,0 +1,42 @@
+{% extends 'base_layout.html' %}
+
+{% block title %}Home Access Controller{% endblock %}
+
+{% block main-content %}
+
+	{% if devices.count == 0 %}
+		<div class="col-12">
+			<p class="noDevices">You haven't setup any device yet.</p>
+		</div>
+	{% else %}
+		{% for device in devices %}
+		<article class="col-6 col-md-4 col-xl-3">
+          <div class="square">
+            <div class="fullcontent">
+              <div class="row w-75 h-100 mx-auto">
+                <div class="col-sm-12 h-75 p-3">
+                  <div id="device1" class="circlebtn" onclick="openDoor('{{ device.id }}', '{{ device.name }}')">
+                    <div class="row align-items-center h-100">
+                      <div class="activityNumber my-auto">{{ device.display_name }}</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="deviceActivityContainer col-sm-12 h-25">
+                  <div class="deviceActivity">
+                    <span class="activityLabel">Last Opened </span>
+                    <span class="activityTime">
+                    	{% if device.lastTime == None %}
+                    		Never Opened
+                    	{% else %}
+                    		{{ device.lastTime }}
+                    	{% endif %}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+	{% endfor %}
+	{% endif %}
+{% endblock %}
